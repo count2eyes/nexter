@@ -1,0 +1,129 @@
+.header {
+  grid-column: full-start / col-end 6;
+  grid-row: 2 / 3;
+
+  
+  background: rgba($color-secondary, .9);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../img/hero-1499.jpg);
+
+    @media only screen and (min-resolution: 192dpi) and (min-width: 900px),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 900px),
+    only screen and (min-width: 1500px) {
+      background-image: url(../img/hero-1499.jpg);
+    }
+
+    @media only screen and (min-resolution: 192dpi) and (min-width: 600px),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 600px),
+    only screen and (min-width: 1200px) {
+      background-image: url(../img/hero-1221.jpg);
+    }
+
+    @media only screen and (min-resolution: 192dpi) and (min-width: 450px),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 450px),
+    only screen and (min-width: 900px) {
+      background-image: url(../img/hero-906.jpg);
+    }
+
+    @media only screen and (min-resolution: 192dpi) and (max-width: 449px),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 449px),
+    only screen and (max-width: 899px) {
+      background-image: url(../img/hero-600.jpg);
+    }
+
+  display: grid;
+  grid-template-columns: minmax(6rem, 1fr) minmax(min-content, max-content) minmax(6rem, 1fr);
+  grid-template-rows: min-content 1fr min-content;
+  align-items: center;
+  padding: 4rem 0;
+  
+  @include breakpoint(800) {
+    grid-column: full-start / full-end;
+
+  }
+  
+  @include breakpoint(phone) {
+    grid-template-columns: minmax(3rem, 1fr) minmax(min-content, max-content) minmax(2rem, 1fr);
+
+  }
+
+}
+
+.logo-div {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  text-align: center;
+
+  .logo {
+    height: 3rem;
+  }
+}
+
+.heading {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  &__h5 {
+  
+  }
+  
+  &__h1 {
+  
+  }
+  
+  &__btn {
+    width: 22rem;
+  }
+}
+
+
+.exposure {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  text-align: center;
+  width: 100%;
+
+  
+    
+  &__seenon {
+    padding: 2rem 0;
+    display: grid;
+    grid-column-gap: 1.5rem;
+    align-items: center;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-auto-flow: column;
+    color: white;
+    font-size: 1.4rem;
+    filter: brightness(.8);
+
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background: rgba(white, .9);
+    }
+
+  }
+  
+
+
+  &__media {
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    -webkit-justify-items: center;
+    justify-items: center;
+  }
+  
+
+  &__img {
+    max-height: 2.5rem;
+    max-width: 100%;
+    filter: brightness(.7); 
+  }
+}

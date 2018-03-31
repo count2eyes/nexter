@@ -1,0 +1,66 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+// variables
+
+$sidebar : 6rem;
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 56.25%;
+  }
+  // @media only screen and (max-width: 1000px) {
+  //   font-size: 50%;
+  // }
+  @media only screen and (max-width: 800px) {
+    font-size: 50%;
+  }
+  // @media only screen and (max-width: 600px) {
+  //   font-size: 43.75%;
+  // } 
+}
+
+body {
+  font-family: $font-primary;
+  line-height: 1.6;
+  color: $color-grey-dark-2;
+
+  //this padding to be deleted
+  //padding: 3rem;
+}
+
+.container {
+  font-size: 3rem;
+  display: grid;
+  grid-template-rows: min-content 80vh repeat(3, min-content) 40vw repeat(3, min-content);
+  grid-template-columns:[sidebar-start] min-content [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 142px) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  
+  @include breakpoint(800) {
+    grid-template-rows: min-content 80vh repeat(3, min-content) 50vw repeat(3, min-content);
+
+  }
+}

@@ -1,0 +1,62 @@
+.features {
+  background: white;
+  grid-column: center-start / center-end;
+  grid-row: 4 / 5;
+  padding: 10rem 0;
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem;
+  grid-column-gap: 3rem;
+
+  
+  @include breakpoint(800) {
+    padding: 14rem 4rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 6rem;
+    
+  }
+  
+  @include breakpoint(phone) {
+    padding: 14rem 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media only screen and (max-width: 400px) {
+    padding: 12rem 0;
+  } 
+
+
+  &__container {
+    // min-width: 16rem;
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: repeat(2, min-content);
+    grid-auto-flow: column;
+    align-items: center;
+
+  }
+
+  &__ico {
+    fill: $color-primary;
+    height: 3.7rem;
+    width: 3.7rem;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+  &__heading {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    
+  }
+  
+  &__details {
+    color: $color-grey-dark-2;
+    font-size: 1.4rem;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+}

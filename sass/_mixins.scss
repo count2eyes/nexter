@@ -1,0 +1,28 @@
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == large {
+    @media only screen and (min-width: 1800px) {
+      @content;
+    }
+  } 
+  @else if $breakpoint == tab-land {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == 1k {
+    @media only screen and (max-width: 1000px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == 800 {
+    @media only screen and (max-width: 800px) {
+      @content;
+    }
+  } 
+  @else if $breakpoint == phone {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+  
+}
